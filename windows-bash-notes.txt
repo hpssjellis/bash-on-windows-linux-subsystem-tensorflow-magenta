@@ -1,0 +1,79 @@
+bash
+
+#I have heard it works better from the power shell?
+
+
+#do some checks
+git --version
+nano --version
+python --version
+#ctrl-D to quit
+#short form works for node
+nodejs -v
+npm -v
+
+
+
+
+
+ls
+pwd
+
+cd ~/
+ls
+cd /
+ls
+ls -la
+
+cd /home
+mkdir tom
+cd tom
+
+
+nano myhello.sh
+#!/bin/bash
+echo "hello Ubuntu on Windows"
+ctrl-x to quit
+
+
+ls
+
+#tab to autofil
+bash myhello.sh
+
+lsb_release -a
+
+sudo apt-get update
+
+sudo apt-get git
+
+git clone https://github.com/hpssjellis/google-magenta-midi-music-on-linux-hello-world.git
+
+cd go-tab
+bash setup.sh
+
+
+
+
+
+
+
+mkdir go
+touch me.txt
+rm me.txt
+rmdir go
+rm -f go
+
+
+
+#get a better ubuntu
+
+sudo apt-get upgrade
+
+lsb_release -a
+
+
+#if you screw up bash, type into a windows command shell.
+#This will delete all your changes to bash and windows ubuntu 
+
+lxrun /uninstall /full 
