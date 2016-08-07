@@ -1,7 +1,9 @@
 #!/bin/bash  
 
 #  only need to run this script with the command (do not type the #)
-#  bash setup.sh
+# sudo chmod +x  setup.sh
+# ./setup.sh
+
 
 
 
@@ -12,7 +14,7 @@ echo "Installs Magenta to a folder in your home directory called mymagenta"
 
 
 
-mkdir ~/mymagenta
+sudo mkdir ~/mymagenta
 
 cd ~/mymagenta
 
@@ -29,26 +31,26 @@ sudo add-apt-repository ppa:webupd8team/java
 sudo apt-get update
 sudo apt-get -y install oracle-java8-installer pkg-config zip g++ zlib1g-dev unzip
 
-mkdir ~/mymagenta/bazel
+sudo mkdir ~/mymagenta/bazel
 cd ~/mymagenta/bazel
 
 #wget https://github.com/bazelbuild/bazel/releases/download/0.2.3/bazel-0.2.3-installer-linux-x86_64.sh -O ~/mymagenta/bazel/bazel-0.2.3-installer-linux-x86_64.sh
 #wget https://github.com/bazelbuild/bazel/releases/download/0.3.0/bazel-0.3.0-installer-linux-x86_64.sh -O ~/mymagenta/bazel/bazel-0.3.0-installer-linux-x86_64.sh
 
 
-wget https://github.com/bazelbuild/bazel/releases/download/0.3.1/bazel-0.3.1-installer-linux-x86_64.sh -O ~/mymagenta/bazel/bazel-0.3.1-installer-linux-x86_64.sh
+sudo wget https://github.com/bazelbuild/bazel/releases/download/0.3.1/bazel-0.3.1-installer-linux-x86_64.sh -O ~/mymagenta/bazel/bazel-0.3.1-installer-linux-x86_64.sh
 
 
 
 
-#chmod +x bazel-0.2.3-installer-linux-x86_64.sh
+sudo chmod +x bazel-0.3.1-installer-linux-x86_64.sh
 
 
 echo "Presently these next two commands not working well. May have to do from the command line"
 
 #sudo bash bazel-0.2.3-installer-linux-x86_64.sh --user
 
-sudo bash bazel-0.3.1-installer-linux-x86_64.sh --user
+sudo ./bazel-0.3.1-installer-linux-x86_64.sh --user
 #bash bazel-0.2.3-installer-linux-x86_64.sh --user --bin=${IDEDIR}/bin
 
 #export PATH=$PATH:~/bin
@@ -56,7 +58,7 @@ export PATH="$PATH:~/bin"
 #rm bazel-0.2.3-installer-linux-x86_64.sh
 
 echo "Just test if bazel is working"
-rm bazel-0.3.1-installer-linux-x86_64.sh
+sudo rm bazel-0.3.1-installer-linux-x86_64.sh
 bazel -h
 
 
@@ -186,7 +188,7 @@ git clone https://github.com/tensorflow/magenta.git
 echo "Grab my github site to load a few bash files"
 cd ~/mymagenta
 
-git clone https://github.com/hpssjellis/google-magenta-midi-music-on-linux-hello-world.git
+sudo git clone https://github.com/hpssjellis/google-magenta-midi-music-on-linux-hello-world.git
 
 
 echo "copy the bash file a01-helloworld.sh to the magenta workspace folder"
@@ -196,15 +198,15 @@ echo "copy the bash file a01-helloworld.sh to the magenta workspace folder"
 
 #cp a* ~/mymagenta/magenta
 
-cp ~/mymagenta/google-magenta-midi-music-on-linux-hello-world/a01-rnn_basic.sh ~/mymagenta/magenta/a01-rnn_basic.sh
-cp ~/mymagenta/google-magenta-midi-music-on-linux-hello-world/a02-rnn_basic_retrain.sh  ~/mymagenta/magenta/a02-rnn_basic_retrain.sh
-cp ~/mymagenta/google-magenta-midi-music-on-linux-hello-world/a03-extra-installs.sh ~/mymagenta/magenta/a03-extra-installs.sh
+sudo cp ~/mymagenta/google-magenta-midi-music-on-linux-hello-world/a01-rnn_basic.sh ~/mymagenta/magenta/a01-rnn_basic.sh
+sudo cp ~/mymagenta/google-magenta-midi-music-on-linux-hello-world/a02-rnn_basic_retrain.sh  ~/mymagenta/magenta/a02-rnn_basic_retrain.sh
+sudo cp ~/mymagenta/google-magenta-midi-music-on-linux-hello-world/a03-extra-installs.sh ~/mymagenta/magenta/a03-extra-installs.sh
 
-cp ~/mymagenta/google-magenta-midi-music-on-linux-hello-world/a04-midi-to-mp3.sh ~/mymagenta/magenta/a04-midi-to-mp3.sh
-cp ~/mymagenta/google-magenta-midi-music-on-linux-hello-world/a05-lookback.sh ~/mymagenta/magenta/a05-lookback.sh
-cp ~/mymagenta/google-magenta-midi-music-on-linux-hello-world/a06-attention.sh ~/mymagenta/magenta/a06-attention.sh
+sudo cp ~/mymagenta/google-magenta-midi-music-on-linux-hello-world/a04-midi-to-mp3.sh ~/mymagenta/magenta/a04-midi-to-mp3.sh
+sudo cp ~/mymagenta/google-magenta-midi-music-on-linux-hello-world/a05-lookback.sh ~/mymagenta/magenta/a05-lookback.sh
+sudo cp ~/mymagenta/google-magenta-midi-music-on-linux-hello-world/a06-attention.sh ~/mymagenta/magenta/a06-attention.sh
 
-cp ~/mymagenta/google-magenta-midi-music-on-linux-hello-world/a08-just-output.sh ~/mymagenta/magenta/a08-just-output.sh
+sudo cp ~/mymagenta/google-magenta-midi-music-on-linux-hello-world/a08-just-output.sh ~/mymagenta/magenta/a08-just-output.sh
 
 
 
@@ -274,11 +276,11 @@ echo "and setup a spot for temporary files"
 echo "not sure if magenta can make the folders for you????"
 
 
-mkdir /tmp/basic_rnn_generated
-mkdir /tmp/lookback_rnn
-mkdir /tmp/attention_rnn
-mkdir /tmp/lookback_rnn/generated
-mkdir /tmp/attention_rnn/generated
+sudo mkdir /tmp/basic_rnn_generated
+sudo mkdir /tmp/lookback_rnn
+sudo mkdir /tmp/attention_rnn
+sudo mkdir /tmp/lookback_rnn/generated
+sudo mkdir /tmp/attention_rnn/generated
 
 
 
@@ -286,13 +288,13 @@ mkdir /tmp/attention_rnn/generated
 echo "Add a few symlinks to make life easier"
 
 #ln -s /tmp/basic_rnn_generated a-link-to-generated-midi
-ln -s ~/mymagenta/magenta/magenta/testdata aa01-link-to-your-midi
-ln -s ~/mymagenta/magenta/magenta/models/shared aa02-link-to-primer-midi
+sudo ln -s ~/mymagenta/magenta/magenta/testdata aa01-link-to-your-midi
+sudo ln -s ~/mymagenta/magenta/magenta/models/shared aa02-link-to-primer-midi
 
-ln -s /tmp aa03-link-to-tmp-all-runs
-ln -s /tmp/basic_rnn_generated aa04-link-to-basic_rnn-generated
-ln -s /tmp/lookback_rnn/generated aa05-link-to-lookback-generated
-ln -s /tmp/attention_rnn/generated aa06-link-to-attention-generated
+sudo ln -s /tmp aa03-link-to-tmp-all-runs
+sudo ln -s /tmp/basic_rnn_generated aa04-link-to-basic_rnn-generated
+sudo ln -s /tmp/lookback_rnn/generated aa05-link-to-lookback-generated
+sudo ln -s /tmp/attention_rnn/generated aa06-link-to-attention-generated
 
 
 
@@ -396,8 +398,8 @@ cd ~/mymagenta/magenta
 
 echo "Lest be brave and try to run the hello music AI world bash file"
 echo "a01-helloworld.sh should have been copied into the magenta workspace"
-
-bash a01-rnn_basic.sh
+sudo chmod +x a01-rnn_basic.sh
+sudo ./a01-rnn_basic.sh
 
 echo "Import your midi files from /tmp/basic_rnn_generated to https://onlinesequencer.net/"
 echo""
