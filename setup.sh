@@ -23,12 +23,12 @@ cd ~/mymagenta
 
 echo "Now trying Bazel"
 
-
-
+sudo apt-get update
+sudo apt-get -y install unzip
 
 sudo apt-get  -y install software-properties-common
 sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get update
+
 sudo apt-get -y install oracle-java8-installer pkg-config zip g++ zlib1g-dev unzip
 
 sudo mkdir ~/mymagenta/bazel
