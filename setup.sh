@@ -157,18 +157,18 @@ sudo mkdir /tmp/attention_rnn/generated
 
 
 
-#------------------gggggggggggggggggggggg
 
 
 
+cd /home/$USER/mymagenta
 
 
 
 echo "Add a few symlinks to make life easier"
 
 #ln -s /tmp/basic_rnn_generated a-link-to-generated-midi
-sudo ln -s ~/mymagenta/magenta/magenta/testdata aa01-link-to-your-midi
-sudo ln -s ~/mymagenta/magenta/magenta/models/shared aa02-link-to-primer-midi
+sudo ln -s /home/$USER/mymagenta/magenta/magenta/testdata aa01-link-to-your-midi
+sudo ln -s /home/$USER/mymagenta/magenta/models/shared aa02-link-to-primer-midi
 
 sudo ln -s /tmp aa03-link-to-tmp-all-runs
 sudo ln -s /tmp/basic_rnn_generated aa04-link-to-basic_rnn-generated
@@ -252,7 +252,7 @@ echo ""
 echo "--------------------------------------------------------------"
 echo ". "
 
-cd ~/mymagenta
+cd /home/$USER/mymagenta
 
 echo "next list this directory"
 pwd
@@ -273,12 +273,12 @@ echo "If not just open a new folder and type bash <name of hello-world.sh progra
 
 
 
-cd ~/mymagenta/magenta
+cd /home/$USER/mymagenta/magenta
 
 echo "Lest be brave and try to run the hello music AI world bash file"
 echo "a01-helloworld.sh should have been copied into the magenta workspace"
-sudo chmod +x a01-rnn_basic.sh
-sudo ./a01-rnn_basic.sh
+chmod +x a01-rnn_basic.sh
+./a01-rnn_basic.sh
 
 echo "Import your midi files from /tmp/basic_rnn_generated to https://onlinesequencer.net/"
 echo""
@@ -292,6 +292,7 @@ echo "tensorboard command is"
 echo "tensorboard --logdir=/tmp/basic_rnn"
 echo "If things don't seem correct ctrl-C to quit tensorboard, Note: this must be the last command in this batch file"
 
+echo "Open another terminal to try the other bash files"
 #tensorboard --logdir=/tmp/basic_rnn
 
 tensorboard --logdir=basic_rnn:/tmp/basic_rnn,loopback:/tmp/lookback_rnn,attention:/tmp/attention_rnn
