@@ -95,13 +95,13 @@ sudo cp /home/$USER/mymagenta/google-magenta-midi-music-on-linux-hello-world/a08
 
 
 
-#--------------------------------gggggggggggggggggggggggggggggggg
+
 
 
 
 echo "Now test if bazel is working and build ~1.5 Gb of files"
 
-cd ~/mymagenta/magenta
+cd /home/$USER/mymagenta
 
 
 # as of july 15, 2016 not sure if this still works
@@ -131,7 +131,7 @@ echo "If it all worked try these scripts"
 
 
 
-cd ~/mymagenta/magenta
+cd /home/$USER/mymagenta
 
 
 
@@ -152,6 +152,14 @@ sudo mkdir /tmp/lookback_rnn
 sudo mkdir /tmp/attention_rnn
 sudo mkdir /tmp/lookback_rnn/generated
 sudo mkdir /tmp/attention_rnn/generated
+
+
+
+
+
+#------------------gggggggggggggggggggggg
+
+
 
 
 
